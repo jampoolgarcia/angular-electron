@@ -1,9 +1,12 @@
 // importamos las clases necesarias desde electron
 const { app, BrowserWindow, ipcMain } = require("electron");
-
+// importo todo lo necesario para el store
+const Store = require('electron-store');
 
 // creamos una variable para almacenar nuestra ventana
 let appWin;
+// creo una obejto del tipo Store y lo almaceno
+const store = new Store();
 
 // metodo que ejecutara todo lo relacionado con nuestra ventana
 createWindow = () => {
@@ -39,6 +42,8 @@ createWindow = () => {
 app.on("ready", createWindow);
 // configuramos el ipcMain para que retorne un mensage de replica
 ipcMain.on("message", (event) => event.reply("reply", "pong"));
+// si no extiste la clave 'clicks' en el store la creamos y la inicializamos en '0'
+if(!store.get('clicks')) store.set("clicks", 0);
 
 // configuramos el cierre de la app
 app.on("window-all-closed", () =>{
