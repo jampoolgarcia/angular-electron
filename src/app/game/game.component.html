@@ -1,1 +1,7 @@
-<p>game works!</p>
+<div class="container game-container">
+  <h2>PRESS THE BUTTON</h2>
+  <button (click)="addClicks()" class="game-btn"></button>
+
+  <h1>Total clicks: {{ clicks }}</h1>
+  <button (click)="save()" [disabled]="saved" class="saved-btn">Save</button>
+</div>

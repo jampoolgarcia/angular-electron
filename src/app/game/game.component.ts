@@ -22,7 +22,7 @@ export class GameComponent implements OnInit {
   }
 
   // evento que se ejecuta al hacer clicks
-  addCliks(): void {
+  addClicks(): void {
     // incrementa la variable clicks de 1 en 1
     this.clicks++;
     // cambia el estado de guardado de la varible 'saved'
