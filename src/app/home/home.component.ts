@@ -1,5 +1,5 @@
 import { Component, OnDestroy, ChangeDetectorRef } from '@angular/core';
-import { IpcRenderService } from '../ipc-render.service';
+import { IpcRenderService } from '../electron-services/ipc-render.service';
 
 @Component({
   selector: 'app-home',
