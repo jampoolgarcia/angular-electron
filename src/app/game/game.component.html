@@ -1,7 +1,7 @@
-<div class="container game-container">
+<div class="content container d-flex flex-column align-items-center justify-content-evenly">
   <h2>PRESS THE BUTTON</h2>
-  <button (click)="addClicks()" class="game-btn"></button>
+  <button (click)="addClicks()" type="button" class="game-btn"></button>
 
-  <h1>Total clicks: {{ clicks }}</h1>
-  <button (click)="save()" [disabled]="saved" class="saved-btn btn btn-primary">Save</button>
+  <h1>Total clicks:  {{ clicks }} </h1>
+  <button (click)="save()" [disabled]="saved" class="saved-btn btn btn-primary btn-lg">Save</button>
 </div>

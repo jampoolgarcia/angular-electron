@@ -1,7 +1,7 @@
-<div class="container d-flex align-items-center justify-content-center flex-column  vh-100">
-  <button type="button" (click)="ping()"  class="btn btn-dark">
+<div class="content container d-flex flex-column align-items-center justify-content-center">
+  <button type="button" (click)="ping()"  class="btn btn-dark btn-lg">
     ping
   </button>
-  <h2 *ngIf="pong">PONG!</h2>
+  <h2 *ngIf="pong" class="fs-3 fw-bold">PONG!</h2>
 </div>
 
