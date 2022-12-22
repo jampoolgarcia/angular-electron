@@ -1,6 +1,8 @@
 {
   "name": "angular-electron",
-  "version": "0.0.0",
+  "productName": "Electron First Project",
+  "description": "Application for electron tutorials",
+  "version": "0.1.0",
   "main": "main.js",
   "scripts": {
     "ng": "ng",
@@ -8,7 +10,10 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "electron": "ng build && electron ."
+    "electron": "ng build && electron .",
+    "package-mac": "electron-packager . --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "package-win": "electron-packager . electron-app --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=CE --version-string.FileDescription=CE --version-string.ProductName=\"Electron App\"",
+    "package-linux": "electron-packager . electron-app --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +36,8 @@
     "@angular/compiler-cli": "^14.1.0",
     "@types/jasmine": "~4.0.0",
     "electron": "^22.0.0",
+    "electron-packager": "^17.1.1",
+    "electron-winstaller": "^5.1.0",
     "jasmine-core": "~4.2.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
